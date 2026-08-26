@@ -1,0 +1,37 @@
+[project]
+name = "open-city"
+version = "1.0.0"
+description = "Jogo top-down de ação em mundo aberto, inspirado em GTA, feito em Python + Pygame"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Seu Nome" }]
+keywords = ["game", "pygame", "gamedev", "top-down", "open-world"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment :: Arcade",
+]
+dependencies = [
+    "pygame>=2.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+open-city = "open_city.cli:run"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["open_city*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
